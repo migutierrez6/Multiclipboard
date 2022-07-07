@@ -1,9 +1,12 @@
+# import out modules here
 import sys
 import clipboard
 import json
 
-
+# variable that has the name o the json file we use to store the clipboard
 SAVED_DATA = "clipboard.json"
+
+#two functions to write and read the json file
 
 # create json file for us: function named save_items passing the filepath and data as parameters
 # then open a file with open and put filepath in w mode for write
@@ -26,6 +29,14 @@ def load_data(filepath):
             return data
     except:
         return {}
+
+# make sure we have 2 command line arguments. The first one being the name of the  python file, the second is the command we wanna run
+# grab what that command is then load data from json file.
+# If command is equal to save: we ask to enter key then get whats on the clipbopard and saved it in the dictionary
+# and to the json file.
+# If command is equal to load: we ask for the key then we take whatever the value is and put it into the users clipboard
+# otherwise the key doesnt exits.
+# If command is equal to list: print the data
 
 
 if len(sys.argv) == 2:
